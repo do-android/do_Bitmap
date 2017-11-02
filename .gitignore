@@ -1,0 +1,9 @@
+*.class
+*.apk
+bin/
+gen/
+.settings/
+proguard/
+*.classpath
+/doExt_do_Bitmap/do_Bitmap.zip
+/doExt_do_Bitmap/libs/docore.jar

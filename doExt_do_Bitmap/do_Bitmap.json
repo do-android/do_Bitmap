@@ -1,0 +1,126 @@
+{
+    "ID": "do_Bitmap",
+    "IsContainer": "0",
+    "Type": "MM",
+    "Name": "位图",
+    "Version": "1.0",
+    "Description": "图片的处理组件，通过加载source对应路径的图片到内存中，不再需要使用该位图资源必须调用MM组件基类方法release()来释放该使用内存",
+    "Icon": "",
+    "IOS": {
+        "Support": 1,
+        "MinVersion": "7.0"
+    },
+    "Android": {
+        "Support": 1,
+        "MinVersion": "4.0"
+    },
+    "Windows": {
+        "Support": 1,
+        "MinVersion": "8.1"
+    },
+    "WindowsPhone": {
+        "Support": 1,
+        "MinVersion": "8.1"
+    },
+    "Html": {
+        "Support": 1,
+        "MinVersion": "5.0"
+    },
+    "Properties": [ ],
+    "Events": [],
+    "syncMethodes": [],
+    "asyncMethodes": [
+        {
+            "ID": "load",
+            "Name": "加载位图",
+            "Description": "保存位图到本地",
+            "ReturnType": "Boolean",
+            "ReturnDesc": "成功返回true，失败返回false",
+            "Paras": [
+                {
+                    "ID": "source",
+                    "Name": "图片路径",
+                    "Type": "String",
+                    "DefaultValue": "",
+                    "Required": 1,
+                    "Description": "可设置网络或本地文件，支持：http:// https:// data:// source:// 打头的URI格式，不能包含@符号。其中文件格式说明可参考Storage类"
+                }
+            ]
+        },
+        {
+            "ID": "save",
+            "Name": "保存位图",
+            "Description": "保存位图到本地",
+            "ReturnType": "String",
+            "ReturnDesc": "返回当前保存的图片路径，为空时表示保存失败",
+            "Paras": [
+                {
+                    "ID": "format",
+                    "Name": "压缩格式",
+                    "Type": "String",
+                    "DefaultValue": "JPEG",
+                    "Required": 0,
+                    "Description": "支持两种格式：PNG，JPEG"
+                },
+                {
+                    "ID": "quality",
+                    "Name": "压缩质量",
+                    "Type": "Number",
+                    "DefaultValue": "100",
+                    "Required": 0,
+                    "Description": "图片的压缩质量，支持 1-100"
+                },
+                {
+                    "ID": "outPath",
+                    "Name": "输出路径",
+                    "Type": "String",
+                    "DefaultValue": "",
+                    "Required": 0,
+                    "Description": "保存的图片路径支持：data:// 和 source:// 开头，如果为空，缺省返回唯一图片路径，会另存到data://temp/do_Bitmap/目录下"
+                }
+            ]
+        },
+        {
+            "ID": "toGrayScale",
+            "Name": "转成灰色位图",
+            "Description": "转换成灰色位图",
+            "ReturnType": "Boolean",
+            "ReturnDesc": "成功返回true，失败返回false",
+            "Paras": []
+        },
+        {
+            "ID": "toFrostedGlass",
+            "Name": "转成毛玻璃位图",
+            "Description": "转成毛玻璃位图",
+            "ReturnType": "Boolean",
+            "ReturnDesc": "成功返回true，失败返回false",
+            "Paras": [
+                {
+                    "ID": "degree",
+                    "Name": "模糊程度",
+                    "Type": "Number",
+                    "DefaultValue": "",
+                    "Required": 1,
+                    "Description": "图片的模糊程度，支持 1-100"
+                }
+            ]
+        },
+        {
+            "ID": "toRoundCorner",
+            "Name": "添加圆角",
+            "Description": "为位图添加圆角效果",
+            "ReturnType": "Boolean",
+            "ReturnDesc": "成功返回true，失败返回false",
+            "Paras": [
+                {
+                    "ID": "radius",
+                    "Name": "圆角半径",
+                    "Type": "Number",
+                    "DefaultValue": "",
+                    "Required": 1,
+                    "Description": ""
+                }
+            ]
+        }
+    ]
+}
